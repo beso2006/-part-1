@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌈 التنشئة الاجتماعية للطفل - ملخص تفاعلي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #FF6B9D;
+    --purple: #A855F7;
+    --blue: #60A5FA;
+    --green: #34D399;
+    --yellow: #FBBF24;
+    --orange: #FB923C;
+    --mint: #6EE7B7;
+    --lavender: #C4B5FD;
+    --peach: #FCA5A5;
+    --sky: #BAE6FD;
+    --bg: #FFF8F0;
+    --card-radius: 20px;
+    --shadow: 0 8px 32px rgba(168,85,247,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(255,107,157,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(96,165,250,0.08) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(168,85,247,0.05) 0%, transparent 60%);
+    min-height: 100vh;
+    color: #2D1B69;
+    overflow-x: hidden;
+  }
+
+  /* FLOATING SHAPES */
+  .floaties { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+  .floaty { position: absolute; border-radius: 50%; opacity: 0.18; animation: float linear infinite; }
+  .floaty:nth-child(1)  { width:80px;  height:80px;  background:var(--pink);   top:5%;  left:8%;  animation-duration:14s; }
+  .floaty:nth-child(2)  { width:50px;  height:50px;  background:var(--blue);   top:15%; right:10%;animation-duration:18s; animation-delay:-3s; }
+  .floaty:nth-child(3)  { width:100px; height:100px; background:var(--yellow); top:60%; left:3%;  animation-duration:20s; animation-delay:-7s; }
+  .floaty:nth-child(4)  { width:60px;  height:60px;  background:var(--green);  top:75%; right:5%; animation-duration:16s; animation-delay:-5s; }
+  .floaty:nth-child(5)  { width:40px;  height:40px;  background:var(--purple); top:40%; left:92%;animation-duration:22s; animation-delay:-10s; }
+  .floaty:nth-child(6)  { width:70px;  height:70px;  background:var(--orange); top:90%; left:40%;animation-duration:17s; animation-delay:-2s; }
+  .floaty:nth-child(7)  { width:45px;  height:45px;  background:var(--mint);   top:30%; left:50%;animation-duration:25s; animation-delay:-8s; }
+
+  @keyframes float {
+    0%   { transform: translateY(0px) rotate(0deg)   scale(1);   }
+    25%  { transform: translateY(-30px) rotate(90deg)  scale(1.1); }
+    50%  { transform: translateY(-60px) rotate(180deg) scale(0.9); }
+    75%  { transform: translateY(-30px) rotate(270deg) scale(1.1); }
+    100% { transform: translateY(0px) rotate(360deg) scale(1);   }
+  }
+
+  /* HEADER */
+  header {
+    position: relative; z-index: 10;
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+  }
+
+  .header-bubble {
+    display: inline-block;
+    background: linear-gradient(135deg, #FF6B9D, #A855F7, #60A5FA);
+    border-radius: 30px;
+    padding: 2rem 3rem;
+    box-shadow: 0 16px 48px rgba(168,85,247,0.3);
+    animation: headerPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  @keyframes headerPop {
+    from { transform: scale(0.5) translateY(-30px); opacity: 0; }
+    to   { transform: scale(1) translateY(0);       opacity: 1; }
+  }
+
+  header h1 { font-size: 2.4rem; font-weight: 900; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.2); line-height: 1.3; }
+  header p  { color: rgba(255,255,255,0.9); font-size: 1.05rem; margin-top: 0.5rem; font-weight: 600; }
+
+  .emoji-row { font-size: 2rem; margin-top: 0.8rem; animation: wiggle 2s ease-in-out infinite; }
+  @keyframes wiggle { 0%,100%{transform:rotate(-3deg)} 50%{transform:rotate(3deg)} }
+
+  /* NAV TABS */
+  .nav-tabs {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 0.6rem; padding: 1rem;
+    position: relative; z-index: 10;
+  }
+
+  .tab-btn {
+    padding: 0.6rem 1.2rem;
+    border: none; border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.9rem; font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .tab-btn:hover { transform: translateY(-3px) scale(1.05); }
+  .tab-btn.active { transform: translateY(-3px) scale(1.08); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+  .tab-btn:nth-child(1) { background: linear-gradient(135deg,#FF6B9D,#FF8FB1); color:white; }
+  .tab-btn:nth-child(2) { background: linear-gradient(135deg,#A855F7,#C084FC); color:white; }
+  .tab-btn:nth-child(3) { background: linear-gradient(135deg,#60A5FA,#93C5FD); color:white; }
+  .tab-btn:nth-child(4) { background: linear-gradient(135deg,#34D399,#6EE7B7); color:white; }
+  .tab-btn:nth-child(5) { background: linear-gradient(135deg,#FBBF24,#FCD34D); color:#7C4A00; }
+  .tab-btn:nth-child(6) { background: linear-gradient(135deg,#FB923C,#FDBA74); color:white; }
+
+  /* SECTIONS */
+  .section { display: none; padding: 0 1rem 2rem; position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
+  .section.active { display: block; animation: fadeIn 0.4s ease; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(15px)} to{opacity:1;transform:translateY(0)} }
+
+  /* CARDS */
+  .card {
+    background: white;
+    border-radius: var(--card-radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(168,85,247,0.18); }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 8px; height: 100%;
+    border-radius: 0 var(--card-radius) var(--card-radius) 0;
+  }
+  .card.pink::before   { background: var(--pink);   }
+  .card.purple::before { background: var(--purple); }
+  .card.blue::before   { background: var(--blue);   }
+  .card.green::before  { background: var(--green);  }
+  .card.yellow::before { background: var(--yellow); }
+  .card.orange::before { background: var(--orange); }
+
+  .card-title {
+    font-size: 1.15rem; font-weight: 800;
+    margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .card-emoji { font-size: 1.4rem; }
+
+  /* ACCORDION */
+  .accordion-item {
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 0.7rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    overflow: hidden;
+    border: 2px solid #F3E8FF;
+    transition: border-color 0.3s;
+  }
+  .accordion-item:hover { border-color: var(--lavender); }
+  .accordion-item.open  { border-color: var(--purple);   }
+
+  .accordion-header {
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    font-weight: 700; font-size: 1rem;
+    background: linear-gradient(135deg, #FAF5FF, #F0F9FF);
+    transition: background 0.3s;
+    user-select: none;
+  }
+  .accordion-header:hover { background: linear-gradient(135deg, #F3E8FF, #E0F2FE); }
+  .accordion-item.open .accordion-header { background: linear-gradient(135deg, #EDE9FE, #DBEAFE); }
+
+  .accordion-arrow {
+    width: 28px; height: 28px;
+    background: var(--purple);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 0.8rem;
+    transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    flex-shrink: 0;
+  }
+  .accordion-item.open .accordion-arrow { transform: rotate(180deg); background: var(--pink); }
+
+  .accordion-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 1.2rem;
+  }
+  .accordion-item.open .accordion-body {
+    max-height: 600px;
+    padding: 1rem 1.2rem;
+  }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size: 1.6rem; font-weight: 900;
+    text-align: center;
+    padding: 1.5rem 0 1rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  }
+
+  /* TAGS / BADGES */
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem; font-weight: 700;
+    margin: 0.25rem 0.2rem;
+  }
+  .badge-pink   { background: #FFE4EE; color: #BE185D; }
+  .badge-purple { background: #EDE9FE; color: #6D28D9; }
+  .badge-blue   { background: #DBEAFE; color: #1D4ED8; }
+  .badge-green  { background: #D1FAE5; color: #065F46; }
+  .badge-orange { background: #FFEDD5; color: #C2410C; }
+  .badge-yellow { background: #FEF9C3; color: #92400E; }
+  .badge-red    { background: #FEE2E2; color: #991B1B; }
+
+  /* COMPARISON TABLE */
+  .compare-table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    border-radius: 16px; overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    font-size: 0.92rem;
+  }
+  .compare-table th {
+    padding: 1rem; text-align: center; font-weight: 800; font-size: 0.95rem;
+    color: white;
+  }
+  .compare-table th:nth-child(1) { background: linear-gradient(135deg,#A855F7,#7C3AED); }
+  .compare-table th:nth-child(2) { background: linear-gradient(135deg,#FF6B9D,#EC4899); }
+  .compare-table th:nth-child(3) { background: linear-gradient(135deg,#60A5FA,#3B82F6); }
+  .compare-table td {
+    padding: 0.85rem 1rem; text-align: center;
+    border-bottom: 1px solid #F3F4F6;
+    background: white;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:hover td { background: #FAF5FF; }
+
+  /* MIND MAP */
+  .mind-map {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.8rem; padding: 1rem 0;
+  }
+  .mind-center {
+    background: linear-gradient(135deg, #A855F7, #EC4899);
+    color: white; border-radius: 50px;
+    padding: 1rem 2rem; font-weight: 900; font-size: 1.1rem;
+    box-shadow: 0 8px 24px rgba(168,85,247,0.35);
+    text-align: center;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{box-shadow:0 8px 24px rgba(168,85,247,0.35)} 50%{box-shadow:0 8px 40px rgba(168,85,247,0.55)} }
+
+  .mind-branches {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.7rem;
+    width: 100%;
+  }
+  .mind-branch {
+    padding: 0.65rem 1.1rem;
+    border-radius: 50px; font-weight: 700; font-size: 0.88rem;
+    text-align: center;
+    transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+    cursor: default;
+  }
+  .mind-branch:hover { transform: scale(1.1); }
+  .b1 { background: linear-gradient(135deg,#FFE4EE,#FECDD3); color: #9D174D; }
+  .b2 { background: linear-gradient(135deg,#EDE9FE,#DDD6FE); color: #5B21B6; }
+  .b3 { background: linear-gradient(135deg,#DBEAFE,#BFDBFE); color: #1E40AF; }
+  .b4 { background: linear-gradient(135deg,#D1FAE5,#A7F3D0); color: #064E3B; }
+  .b5 { background: linear-gradient(135deg,#FEF9C3,#FDE68A); color: #78350F; }
+  .b6 { background: linear-gradient(135deg,#FFEDD5,#FED7AA); color: #92400E; }
+  .b7 { background: linear-gradient(135deg,#F3E8FF,#E9D5FF); color: #6B21A8; }
+  .b8 { background: linear-gradient(135deg,#ECFDF5,#D1FAE5); color: #065F46; }
+
+  /* SCIENTISTS LIST */
+  .scientist-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    border-right: 5px solid var(--purple);
+    transition: all 0.3s ease;
+  }
+  .scientist-card:hover { transform: translateX(-4px); border-right-color: var(--pink); }
+  .scientist-avatar {
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; flex-shrink: 0;
+  }
+  .scientist-name { font-weight: 800; font-size: 1rem; color: #4C1D95; margin-bottom: 0.3rem; }
+  .scientist-desc { font-size: 0.88rem; color: #6B7280; line-height: 1.5; }
+
+  /* TRAPS / WARNINGS */
+  .trap-card {
+    background: linear-gradient(135deg, #FFF1F2, #FFF7ED);
+    border: 2px solid #FECACA;
+    border-radius: 16px;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    transition: all 0.3s ease;
+  }
+  .trap-card:hover { transform: translateX(-4px); border-color: var(--pink); box-shadow: 0 4px 16px rgba(255,107,157,0.15); }
+  .trap-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .trap-title { font-weight: 800; color: #BE123C; font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .trap-desc  { font-size: 0.88rem; color: #6B7280; line-height: 1.5; }
+  .trap-fix   { font-size: 0.85rem; color: #065F46; background: #D1FAE5; padding: 0.3rem 0.7rem; border-radius: 8px; margin-top: 0.5rem; display: inline-block; font-weight: 700; }
+
+  /* SUMMARY BULLETS */
+  .bullet-list { list-style: none; }
+  .bullet-list li {
+    padding: 0.6rem 0;
+    padding-right: 1.8rem;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-bottom: 1px dashed #E5E7EB;
+  }
+  .bullet-list li:last-child { border-bottom: none; }
+  .bullet-list li::before {
+    content: attr(data-emoji);
+    position: absolute; right: 0;
+    font-size: 1rem;
+  }
+
+  /* CHARACTERISTICS GRID */
+  .char-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+  }
+  .char-item {
+    background: white;
+    border-radius: 16px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    cursor: default;
+  }
+  .char-item:hover { transform: translateY(-6px) scale(1.03); }
+  .char-emoji { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+  .char-name  { font-weight: 800; font-size: 0.95rem; color: #4C1D95; margin-bottom: 0.3rem; }
+  .char-desc  { font-size: 0.82rem; color: #6B7280; line-height: 1.4; }
+
+  /* THEORIES CARDS */
+  .theory-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.4rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+    border-top: 4px solid transparent;
+    transition: all 0.3s ease;
+  }
+  .theory-card:hover { transform: translateY(-4px); }
+  .theory-card.t1 { border-top-color: var(--purple); }
+  .theory-card.t2 { border-top-color: var(--blue); }
+  .theory-card.t3 { border-top-color: var(--green); }
+  .theory-title { font-weight: 900; font-size: 1.05rem; color: #4C1D95; margin-bottom: 0.6rem; }
+  .theory-sub   { font-size: 0.85rem; font-weight: 700; color: var(--purple); margin-bottom: 0.4rem; background: #EDE9FE; padding: 0.3rem 0.7rem; border-radius: 8px; display: inline-block; }
+
+  /* DEV STAGES */
+  .dev-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.8rem;
+  }
+  .dev-item {
+    border-radius: 16px;
+    padding: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .dev-item:hover { transform: translateY(-6px); }
+  .dev-emoji { font-size: 2.2rem; margin-bottom: 0.5rem; display: block; }
+  .dev-title { font-weight: 800; font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .dev-desc  { font-size: 0.83rem; line-height: 1.5; }
+  .di1 { background: linear-gradient(135deg,#FFF0F8,#FCE7F3); border: 2px solid #FBCFE8; }
+  .di2 { background: linear-gradient(135deg,#F5F3FF,#EDE9FE); border: 2px solid #DDD6FE; }
+  .di3 { background: linear-gradient(135deg,#EFF6FF,#DBEAFE); border: 2px solid #BFDBFE; }
+  .di4 { background: linear-gradient(135deg,#ECFDF5,#D1FAE5); border: 2px solid #A7F3D0; }
+  .di5 { background: linear-gradient(135deg,#FFFBEB,#FEF3C7); border: 2px solid #FDE68A; }
+  .di6 { background: linear-gradient(135deg,#FFF7ED,#FFEDD5); border: 2px solid #FED7AA; }
+  .di7 { background: linear-gradient(135deg,#F0FDF4,#DCFCE7); border: 2px solid #BBF7D0; }
+
+  /* RESPONSIVE */
+  @media(max-width:600px) {
+    header h1 { font-size: 1.7rem; }
+    .header-bubble { padding: 1.5rem 1.5rem; }
+    .compare-table { font-size: 0.78rem; }
+    .compare-table th, .compare-table td { padding: 0.6rem 0.5rem; }
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #FAF5FF; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(var(--purple),var(--pink)); border-radius: 4px; }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem;
+    font-size: 0.85rem; color: #9CA3AF;
+    position: relative; z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<div class="floaties">
+  <div class="floaty"></div><div class="floaty"></div>
+  <div class="floaty"></div><div class="floaty"></div>
+  <div class="floaty"></div><div class="floaty"></div>
+  <div class="floaty"></div>
+</div>
+
+<header>
+  <div class="header-bubble">
+    <h1>🌈 التنشئة الاجتماعية للطفل</h1>
+    <p>ملخص تفاعلي مميز • الفصل الأول</p>
+    <div class="emoji-row">👶 🏡 🎒 🧠 💖 🎨 🌟</div>
+  </div>
+</header>
+
+<!-- NAV TABS -->
+<nav class="nav-tabs">
+  <button class="tab-btn active" onclick="showTab('summary')">📋 الخلاصة</button>
+  <button class="tab-btn" onclick="showTab('chars')">✨ الخصائص</button>
+  <button class="tab-btn" onclick="showTab('theories')">🔬 النظريات</button>
+  <button class="tab-btn" onclick="showTab('scientists')">👨‍🔬 العلماء</button>
+  <button class="tab-btn" onclick="showTab('devstages')">🌱 مراحل النمو</button>
+  <button class="tab-btn" onclick="showTab('traps')">⚠️ مخادع الامتحان</button>
+</nav>
+
+<!-- ============================================================ -->
+<!-- TAB 1: SUMMARY -->
+<!-- ============================================================ -->
+<section id="summary" class="section active">
+  <div class="section-title">📋 خلاصة الفصل الأول</div>
+
+  <!-- Mind Map -->
+  <div class="card purple" style="padding:1.5rem;">
+    <div class="card-title"><span class="card-emoji">🗺️</span> الخريطة الذهنية</div>
+    <div class="mind-map">
+      <div class="mind-center">🌟 التنشئة الاجتماعية</div>
+      <div class="mind-branches">
+        <div class="mind-branch b1">🔑 تعريفها</div>
+        <div class="mind-branch b2">📌 خصائصها (5)</div>
+        <div class="mind-branch b3">📚 نظرياتها (3)</div>
+        <div class="mind-branch b4">🏠 مؤسساتها</div>
+        <div class="mind-branch b5">👦 مقومات الطفل 3-6</div>
+        <div class="mind-branch b6">🧠 نمو عقلي</div>
+        <div class="mind-branch b7">💖 نمو وجداني</div>
+        <div class="mind-branch b8">🏃 نمو حركي</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Definition -->
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      <span>🔑 تعريف التنشئة الاجتماعية</span>
+      <div class="accordion-arrow">▼</div>
+    </div>
+    <div class="accordion-body">
+      <ul class="bullet-list">
+        <li data-emoji="📖">هي <strong>عملية تكوين شخصية الإنسان الثقافية</strong> من جيل إلى آخر</li>
+        <li data-emoji="🎯">تشمل كل الأساليب التي يتلقاها الفرد من الأسرة (الوالدين والمحيطين)</li>
+        <li data-emoji="🌍">هدفها: بناء شخصية نامية جسمياً ونفسياً واجتماعياً</li>
+        <li data-emoji="👨‍👩‍👧">تتضمن مواقف: الرضاعة، الفطام، التدريب على الإخراج، النظافة، الغذاء، اللعب، التنافس</li>
+        <li data-emoji="📝"><strong>تعريف سعد جلال:</strong> تشكيل الفرد عن طريق ثقافته حتى يتمكن من الحياة فيها</li>
+        <li data-emoji="🔬"><strong>تعريف Parsons:</strong> عملية تعتمد على التلقين والمحاكاة والتوحد لإدماج عناصر الثقافة في نمط الشخصية</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3 Conclusions -->
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      <span>💡 أهم 3 استنتاجات من التعريفات</span>
+      <div class="accordion-arrow">▼</div>
+    </div>
+    <div class="accordion-body">
+      <ul class="bullet-list">
+        <li data-emoji="1️⃣">التنشئة أسلوب توافق مع الجماعة — يتعلم الطفل دوره في الجماعات التي ينتسب إليها</li>
+        <li data-emoji="2️⃣">عملية حرجة للفرد والمجتمع — إذا تمت وفق أسس سليمة كان الفرد صالحاً لنفسه ومجتمعه</li>
+        <li data-emoji="3️⃣">تساعد على المحافظة على القيم والتقاليد عبر الأجيال</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Who does socialization? -->
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      <span>🏛️ مؤسسات التنشئة الاجتماعية (بالترتيب)</span>
+      <div class="accordion-arrow">▼</div>
+    </div>
+    <div class="accordion-body">
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;padding:0.5rem 0;">
+        <span class="badge badge-pink">1️⃣ الأسرة (الأهم)</span>
+        <span class="badge badge-purple">2️⃣ جماعة اللعب</span>
+        <span class="badge badge-blue">3️⃣ المؤسسات التعليمية (الروضة)</span>
+        <span class="badge badge-green">4️⃣ وسائل الإعلام</span>
+      </div>
+      <p style="font-size:0.88rem;color:#6B7280;margin-top:0.5rem;">
+        ⚠️ <strong>الأسرة هي الأسبق والأهم</strong> مهما كان تكوينها (أب وأم وأطفال كاملين أو ناقصين)
+      </p>
+    </div>
+  </div>
+
+  <!-- Key Point -->
+  <div class="card pink">
+    <div class="card-title"><span class="card-emoji">💎</span> النقاط الجوهرية للحفظ</div>
+    <ul class="bullet-list">
+      <li data-emoji="🌱">التنشئة ليست فقط تعلم اجتماعي — بل هي أيضاً <strong>عملية نمو</strong> تحول الطفل المعتمد إلى راشد ناضج</li>
+      <li data-emoji="🔄">لها خاصية <strong>الاستمرار</strong> — لا تقتصر على الطفولة بل تمتد حتى الشيخوخة</li>
+      <li data-emoji="⚡">هي عملية <strong>ديناميكية</strong> — الفرد يأخذ ويعطي ويتأثر ويؤثر</li>
+      <li data-emoji="📐">هي عملية <strong>تربوية</strong> — تعطي الفرد القدرة على ضبط السلوك وإصدار الأحكام</li>
+      <li data-emoji="📈">مرحلة رياض الأطفال (3-6 سنوات) = أخصب مراحل التنشئة الاجتماعية</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 2: CHARACTERISTICS -->
+<!-- ============================================================ -->
+<section id="chars" class="section">
+  <div class="section-title">✨ خصائص التنشئة الاجتماعية</div>
+
+  <div class="char-grid">
+    <div class="char-item">
+      <span class="char-emoji">🎓</span>
+      <div class="char-name">عملية تعلم اجتماعي</div>
+      <div class="char-desc">تعلم العادات، القيم، دور الفرد، مهارات الحياة، معايير السلوك الخلقي</div>
+    </div>
+    <div class="char-item">
+      <span class="char-emoji">🌱</span>
+      <div class="char-name">عملية نمو</div>
+      <div class="char-desc">نامية تتأثر بالبيئة وتتكيف مع متطلبات العصر — تختلف بين الأجيال</div>
+    </div>
+    <div class="char-item">
+      <span class="char-emoji">⏳</span>
+      <div class="char-name">عملية مستمرة</div>
+      <div class="char-desc">تبدأ من الطفولة وتستمر عبر كل مراحل الحياة حتى الشيخوخة</div>
+    </div>
+    <div class="char-item">
+      <span class="char-emoji">📐</span>
+      <div class="char-name">عملية تربوية</div>
+      <div class="char-desc">تعطي القدرة على ضبط السلوك، إصدار الأحكام، القيام بالدور الاجتماعي</div>
+    </div>
+    <div class="char-item">
+      <span class="char-emoji">⚡</span>
+      <div class="char-name">عملية ديناميكية</div>
+      <div class="char-desc">الفرد فاعل مشارك — يتأثر بالجماعة ويؤثر فيها (يأخذ ويعطي)</div>
+    </div>
+  </div>
+
+  <div style="height:1rem;"></div>
+
+  <!-- Educational detail -->
+  <div class="card blue">
+    <div class="card-title"><span class="card-emoji">📐</span> لماذا هي عملية تربوية؟ (4 أسباب)</div>
+    <ul class="bullet-list">
+      <li data-emoji="أ">تعطي الفرد القدرة على <strong>ضبط سلوكه</strong> (تتبع ثقافة الأسرة وتوجهاتها)</li>
+      <li data-emoji="ب">تعطيه القدرة على <strong>إصدار أحكام</strong> من معايير المجتمع</li>
+      <li data-emoji="ج">تعطيه القدرة على <strong>القيام بالدور الاجتماعي</strong> المحدد له (طفل → طالب → موظف)</li>
+      <li data-emoji="د">تعطيه القدرة على <strong>التحكم في الانفعالات</strong> (احترام الكبار، كبح الغضب)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 3: THEORIES -->
+<!-- ============================================================ -->
+<section id="theories" class="section">
+  <div class="section-title">🔬 نظريات التنشئة الاجتماعية</div>
+
+  <!-- Two models first -->
+  <div class="card yellow" style="margin-bottom:1rem;">
+    <div class="card-title"><span class="card-emoji">🧩</span> نموذجا Field للتنشئة</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:0.5rem;">
+      <div style="background:#FFF7ED;border-radius:12px;padding:1rem;border:2px solid #FED7AA;">
+        <div style="font-weight:800;color:#C2410C;margin-bottom:0.4rem;">📥 النموذج الأول: الاستدخال</div>
+        <div style="font-size:0.83rem;color:#6B7280;">الفرد <strong>سلبي</strong> — وعاء يُملأ بقيم الحضارة. يذوب في البناء الاجتماعي</div>
+      </div>
+      <div style="background:#F0FDF4;border-radius:12px;padding:1rem;border:2px solid #BBF7D0;">
+        <div style="font-weight:800;color:#065F46;margin-bottom:0.4rem;">🏗️ النموذج الثاني: الانقياد</div>
+        <div style="font-size:0.83rem;color:#6B7280;">الفرد <strong>فعال</strong> — يبني الواقع المحيط به بشكل طوعي (Conformity)</div>
+      </div>
+    </div>
+    <p style="font-size:0.83rem;color:#9CA3AF;margin-top:0.8rem;text-align:center;">⚠️ كلا النموذجين لا يفسران الخروج عن المعايير الاجتماعية!</p>
+  </div>
+
+  <!-- Theory 1 -->
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      <span>🧠 نظرية التحليل النفسي (فرويد وتلاميذه)</span>
+      <div class="accordion-arrow">▼</div>
+    </div>
+    <div class="accordion-body">
+      <div class="theory-card t1">
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.8rem;">
+          <span class="badge badge-purple">فرويد</span>
+          <span class="badge badge-purple">Neo-Freudians</span>
+          <span class="badge badge-purple">Lindgren Watson</span>
+        </div>
+        <ul class="bullet-list">
+          <li data-emoji="🔺">الفرد يتكون من 3 منظمات: الهو (Id) + الأنا (Ego) + الأنا الأعلى (Super-Ego)</li>
+          <li data-emoji="🌊"><strong>الهو:</strong> مصدر الغرائز — يسعى لمبدأ اللذة (لاشعوري)</li>
+          <li data-emoji="⚖️"><strong>الأنا:</strong> يعمل بمبدأ الواقع — يحقق رغبات الهو في حدود ما يسمح المجتمع</li>
+          <li data-emoji="🏛️"><strong>الأنا الأعلى (الضمير):</strong> أوامر الوالدين والكبار تتحول إلى رقيب داخلي</li>
+          <li data-emoji="👪">التنشئة تقوم على التفاعل مع الأم في مواقف التغذية والإخراج</li>
+          <li data-emoji="❗">فرويد يركز على <strong>التوحد (Identification)</strong> مع أحد الوالدين خلال مراحل نفسجنسية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theory 2 -->
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      <span>🎯 نظريات التعلم الاجتماعي (التدعيم)</span>
+      <div class="accordion-arrow">▼</div>
+    </div>
+    <div class="accordion-body">
+      <div class="theory-card t2">
+        <div style="margin-bottom:0.8rem;"><span class="theory-sub">ثلاثة توجهات رئيسية:</span></div>
+        <div style="background:#EFF6FF;border-radius:12px;padding:0.8rem;margin-bottom:0.6rem;">
+          <strong style="color:#1D4ED8;">التوجه الأول: Miler, Dollard & Sears, Mecoby</strong>
+          <p style="font-size:0.85rem;margin-top:0.3rem;">المنبه → الاستجابة. الطفل يتعلم بالدوافع والجزاءات. يكرر التصرفات التي يفضلها الوالدان</p>
+        </div>
+        <div style="background:#F0FDF4;border-radius:12px;padding:0.8rem;margin-bottom:0.6rem;">
+          <strong style="color:#065F46;">التوجه الثاني: Skinner</strong>
+          <p style="font-size:0.85rem;margin-top:0.3rem;">الثواب والعقاب. الطفل يكرر السلوك المثاب (Rewarded) ولا يكرر غير المثاب (Non-rewarded)</p>
+        </div>
+        <div style="background:#FAF5FF;border-radius:12px;padding:0.8rem;">
+          <strong style="color:#6D28D9;">التوجه الثالث: Bandura, Walter & Park</strong>
+          <p style="font-size:0.85rem;margin-top:0.3rem;">التعلم بالنموذج (Model) — الأطفال يقلدون الأب أو الأم من نفس الجنس. يجدون دعماً ذاتياً كلما اقتربوا من النموذج</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theory 3 -->
+  <div class="accordion-item">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      <span>🎭 نظرية الدور الاجتماعي</span>
+      <div class="accordion-arrow">▼</div>
+    </div>
+    <div class="accordion-body">
+      <div class="theory-card t3">
+        <ul class="bullet-list">
+          <li data-emoji="📌">تتخذ مفهومي: المكانة الاجتماعية (Social Status) + الدور الاجتماعي (Social Role)</li>
+          <li data-emoji="🏆"><strong>المكانة الاجتماعية:</strong> وضع الفرد في البناء الاجتماعي وما يترتب عليه من حقوق وواجبات</li>
+          <li data-emoji="🎭"><strong>الدور الاجتماعي:</strong> السلوك المتوقع من الفرد وفق قيم الثقافة</li>
+          <li data-emoji="💕">الارتباط العاطفي (Attachment) هو المفهوم الثالث — الطفل يكتسب الأدوار من خلال تفاعله مع الراشدين</li>
+          <li data-emoji="🔍">الطفل يتعلم دوره عبر 3 طرق: أ) التعلم المباشر، ب) النماذج، ج) مراجعة النفس</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison table -->
+  <div class="card green" style="margin-top:1rem;padding:1.2rem;">
+    <div class="card-title"><span class="card-emoji">📊</span> مقارنة النظريات الثلاث</div>
+    <div style="overflow-x:auto;margin-top:0.8rem;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>المعيار</th>
+            <th>التحليل النفسي</th>
+            <th>التعلم الاجتماعي</th>
+            <th>الدور الاجتماعي</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>طريعة الفرد</strong></td>
+            <td>سلبي نسبياً</td>
+            <td>يتعلم ويستجيب</td>
+            <td>فاعل اجتماعي</td>
+          </tr>
+          <tr>
+            <td><strong>الآلية الأساسية</strong></td>
+            <td>توحد + الضمير</td>
+            <td>تدعيم + تقليد</td>
+            <td>تفاعل + تعلم الأدوار</td>
+          </tr>
+          <tr>
+            <td><strong>دور الوالدين</strong></td>
+            <td>جوهري جداً</td>
+            <td>مهم (نموذج + جزاء)</td>
+            <td>مهم (نموذج للأدوار)</td>
+          </tr>
+          <tr>
+            <td><strong>نقطة الضعف</strong></td>
+            <td>صعوبة إثبات افتراضاته</td>
+            <td>يتجاهل دور المعرفة</td>
+            <td>لا يفسر الانحراف جيداً</td>
+          </tr>
+          <tr>
+            <td><strong>أبرز الأسماء</strong></td>
+            <td>فرويد، Parsons</td>
+            <td>Skinner، Bandura</td>
+            <td>Mead، Piaget</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 4: SCIENTISTS -->
+<!-- ============================================================ -->
+<section id="scientists" class="section">
+  <div class="section-title">👨‍🔬 العلماء والتعريفات</div>
+
+  <div class="scientist-card">
+    <div class="scientist-avatar" style="background:#EDE9FE;">🧔</div>
+    <div>
+      <div class="scientist-name">سيغموند فرويد (Freud)</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge badge-purple">تحليل نفسي</span></div>
+      <div class="scientist-desc">صاحب نظرية الهو والأنا والأنا الأعلى — يرى أن التنشئة تقوم على التوحد مع الوالدين وتكوين الضمير (Super-Ego)</div>
+    </div>
+  </div>
+
+  <div class="scientist-card" style="border-right-color:var(--blue);">
+    <div class="scientist-avatar" style="background:#DBEAFE;">👓</div>
+    <div>
+      <div class="scientist-name">سعد جلال</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge badge-blue">علماء العرب</span></div>
+      <div class="scientist-desc">عرّف التنشئة: "تشكيل الفرد عن طريق ثقافته حتى يتمكن من الحياة في هذه الثقافة"</div>
+    </div>
+  </div>
+
+  <div class="scientist-card" style="border-right-color:var(--green);">
+    <div class="scientist-avatar" style="background:#D1FAE5;">🇺🇸</div>
+    <div>
+      <div class="scientist-name">Talcott Parsons</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge badge-green">بنيوية وظيفية</span></div>
+      <div class="scientist-desc">عرّف التنشئة: عملية تعتمد على التلقين والمحاكاة والتوحد مع الأنماط العقلية والعاطفية والأخلاقية — تبدأ من الميلاد داخل الأسرة</div>
+    </div>
+  </div>
+
+  <div class="scientist-card" style="border-right-color:var(--yellow);">
+    <div class="scientist-avatar" style="background:#FEF9C3;">🎓</div>
+    <div>
+      <div class="scientist-name">B.F. Skinner</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge badge-yellow">سلوكية</span></div>
+      <div class="scientist-desc">التنشئة تقوم على الثواب والعقاب — الطفل يكرر السلوك المثاب ولا يكرر غير المثاب. التعزيز الإيجابي أساس التعلم الاجتماعي</div>
+    </div>
+  </div>
+
+  <div class="scientist-card" style="border-right-color:var(--orange);">
+    <div class="scientist-avatar" style="background:#FFEDD5;">🏅</div>
+    <div>
+      <div class="scientist-name">Albert Bandura & Walter, Park</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge badge-orange">تعلم اجتماعي</span></div>
+      <div class="scientist-desc">نظرية النموذج (Model) — الأطفال يتعلمون بتقليد الأب أو الأم من نفس جنسهم. يجدون دعماً ذاتياً كلما اقتربوا من النموذج</div>
+    </div>
+  </div>
+
+  <div class="scientist-card" style="border-right-color:var(--pink);">
+    <div class="scientist-avatar" style="background:#FFE4EE;">🧒</div>
+    <div>
+      <div class="scientist-name">Jean Piaget</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge badge-pink">معرفية</span></div>
+      <div class="scientist-desc">قسّم مراحل النمو المعرفي إلى 4: حسحركية (0-2) / ما قبل العمليات (2-7) / العمليات المحسوبة (7-11) / العمليات الشكلية (11+). مرحلتنا = ما قبل العمليات</div>
+    </div>
+  </div>
+
+  <div class="scientist-card" style="border-right-color:#14B8A6;">
+    <div class="scientist-avatar" style="background:#CCFBF1;">🧪</div>
+    <div>
+      <div class="scientist-name">Lev Vygotsky</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge" style="background:#CCFBF1;color:#0F766E;">اجتماعي ثقافي</span></div>
+      <div class="scientist-desc">اللغة هي أداة التفكير وأداة التواصل الاجتماعي. صاحب مصطلح "منطقة النمو الممكن" (Zone of Proximal Development) — العمر وحده لا يكفي لتحديد مستوى النمو</div>
+    </div>
+  </div>
+
+  <div class="scientist-card" style="border-right-color:#8B5CF6;">
+    <div class="scientist-avatar" style="background:#EDE9FE;">❤️</div>
+    <div>
+      <div class="scientist-name">Daniel Goldman</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge badge-purple">ذكاء وجداني</span></div>
+      <div class="scientist-desc">صاحب كتاب "Emotional Intelligence" — عرّف الذكاء الوجداني: القدرة على فهم الانفعالات والتمييز بينها والقدرة على ضبطها والتعامل معها إيجابياً</div>
+    </div>
+  </div>
+
+  <div class="scientist-card" style="border-right-color:#F59E0B;">
+    <div class="scientist-avatar" style="background:#FEF9C3;">📊</div>
+    <div>
+      <div class="scientist-name">Benjamin Bloom</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge badge-yellow">علم النفس التربوي</span></div>
+      <div class="scientist-desc">أثبت أن الطفولة الممتدة من الميلاد حتى 8 سنوات تشكّل 80% من النمو العقلي العام للفرد. الفطفولة المبكرة = أهم مراحل تكوين الذكاء</div>
+    </div>
+  </div>
+
+  <div class="scientist-card" style="border-right-color:#EF4444;">
+    <div class="scientist-avatar" style="background:#FEE2E2;">🌐</div>
+    <div>
+      <div class="scientist-name">Miler & Dollard / Sears & Mecoby</div>
+      <div style="margin-bottom:0.3rem;"><span class="badge badge-red">تعلم اجتماعي</span></div>
+      <div class="scientist-desc">يتبنون فكرة "المنبه والاستجابة" — يهتمون بالدوافع والجزاءات. الطفل يتعلم عندما ينتبه الوالدان أو أحدهم للسلوك</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 5: DEV STAGES -->
+<!-- ============================================================ -->
+<section id="devstages" class="section">
+  <div class="section-title">🌱 مقومات الطفل 3-6 سنوات</div>
+
+  <div class="card pink" style="margin-bottom:1rem;">
+    <div class="card-title"><span class="card-emoji">🌟</span> لماذا هذه المرحلة مهمة؟</div>
+    <ul class="bullet-list">
+      <li data-emoji="🧠">الطفولة المبكرة (0-8 سنوات) = 80% من النمو العقلي العام (Bloom)</li>
+      <li data-emoji="🔥">أهم فترات التكوين — الخلايا العصبية تتشكل وتنمو بسرعة</li>
+      <li data-emoji="🏦">مرحلة "بنك المعلومات" — يمكن تطوير المعلومات في المستقبل</li>
+      <li data-emoji="💡">النمو اللغوي يتطور بسرعة كبيرة — فرصة ذهبية للإكساب</li>
+    </ul>
+  </div>
+
+  <div class="dev-grid">
+    <div class="dev-item di1">
+      <span class="dev-emoji">🧠</span>
+      <div class="dev-title" style="color:#9D174D;">النمو العقلي والمعرفي</div>
+      <div class="dev-desc" style="color:#7F1D1D;">مرحلة "ما قبل العمليات" (بياجيه 2-7 سنة). يمثل الأشياء عقلياً. يفكر بشكل حسحركي. تفكيره مرتبط بالإدراك البصري لا المنطق. بؤري التوجه (حول ذاته)</div>
+    </div>
+    <div class="dev-item di2">
+      <span class="dev-emoji">💪</span>
+      <div class="dev-title" style="color:#5B21B6;">النمو الجسمي الفسيولوجي</div>
+      <div class="dev-desc" style="color:#4C1D95;">طول الولد ~108 سم، البنت ~107 سم. وزن الولد ~18 كيلو، البنت ~17.5 كيلو. الجهاز العصبي يستمر في النمو (تقدم لحاء المخ)</div>
+    </div>
+    <div class="dev-item di3">
+      <span class="dev-emoji">💖</span>
+      <div class="dev-title" style="color:#1E40AF;">النمو الوجداني</div>
+      <div class="dev-desc" style="color:#1E3A8A;">مرحلة عدم التوازن — سهل الاستثارة. تظهر انفعالات شديدة (مزاج، خوف، غيرة). عدم التوازن يظهر من 2.5 إلى 3.5 ومن 5.5 إلى 6.5 سنة</div>
+    </div>
+    <div class="dev-item di4">
+      <span class="dev-emoji">👁️</span>
+      <div class="dev-title" style="color:#064E3B;">النمو الحسي الحركي</div>
+      <div class="dev-desc" style="color:#065F46;">يستجيب للمثير كوحدة لا أجزاء. نمو الإدراك المكاني. يدرك الكل قبل الجزء. قبيل سن 3 يجد صعوبة التمييز بين الشكل والصورة في المرآة</div>
+    </div>
+    <div class="dev-item di5">
+      <span class="dev-emoji">🏃</span>
+      <div class="dev-title" style="color:#78350F;">النمو الحركي</div>
+      <div class="dev-desc" style="color:#92400E;">في سن 5-6: الركض، الوثب، التسلق، تنطيط الكرة، استخدام المقص والقلم. نهاية المرحلة: يقفز الحجل، يمشي على الخط المستقيم، يكتب ويلون</div>
+    </div>
+    <div class="dev-item di6">
+      <span class="dev-emoji">💬</span>
+      <div class="dev-title" style="color:#92400E;">النمو اللغوي</div>
+      <div class="dev-desc" style="color:#7C2D12;">تطور سريع في المفردات والجمل الاستفهامية. عند دخول المدرسة: ثروة لفظية كبيرة. الإناث تتفوق على الذكور. الكلام الداخلي (عند سن 4) أداة تفكير</div>
+    </div>
+    <div class="dev-item di7">
+      <span class="dev-emoji">👫</span>
+      <div class="dev-title" style="color:#065F46;">النمو الاجتماعي</div>
+      <div class="dev-desc" style="color:#064E3B;">3-6 سنة = العمر الحرج في التطبيع الاجتماعي. تبدأ الاتجاهات والأنماط السلوكية الأساسية. يتضمن: سلوك القيادة، السيطرة، التبعية، الاعتماد على النفس، المسايرة</div>
+    </div>
+  </div>
+
+  <!-- Key comparison table -->
+  <div class="card orange" style="margin-top:1rem;">
+    <div class="card-title"><span class="card-emoji">🔬</span> مراحل النمو المعرفي عند بياجيه</div>
+    <div style="overflow-x:auto;margin-top:0.8rem;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>المرحلة</th>
+            <th>العمر</th>
+            <th>الخصائص</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-pink">حسحركية</span></td>
+            <td>0 – 2 سنة</td>
+            <td>تتقسم إلى 6 مراحل داخلية</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-purple">ما قبل العمليات ⭐</span></td>
+            <td>2 – 7 سنة</td>
+            <td>تمثيل الأشياء عقلياً / تقسم إلى 2-4 و4-7 سنة</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-blue">العمليات المحسوبة</span></td>
+            <td>7 – 11 سنة</td>
+            <td>منطق محسوس / حل مشكلات بصورة منطقية</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-green">العمليات الشكلية</span></td>
+            <td>11 سنة فأكثر</td>
+            <td>منطق مجرد / Formal Logic</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.82rem;color:#9CA3AF;margin-top:0.6rem;text-align:center;">⭐ مرحلتنا الدراسية = ما قبل العمليات (2-7 سنة)</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TAB 6: TRAPS -->
+<!-- ============================================================ -->
+<section id="traps" class="section">
+  <div class="section-title">⚠️ مخادع الامتحان والأخطاء الشائعة</div>
+
+  <div class="trap-card">
+    <div class="trap-icon">🎭</div>
+    <div>
+      <div class="trap-title">الخلط بين نظرية Parsons ونظرية فرويد</div>
+      <div class="trap-desc">كلاهما يتحدث عن التوحد — لكن فرويد يركز على التوحد النفسجنسي مع الوالدين، بينما Parsons يتحدث عن الاستدخال الثقافي وتكوين الشخصية الثقافية</div>
+      <span class="trap-fix">✅ الفرق: فرويد (نفسجنسي) / Parsons (ثقافي اجتماعي)</span>
+    </div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-icon">📊</div>
+    <div>
+      <div class="trap-title">الخلط بين النموذجين عند Field</div>
+      <div class="trap-desc">النموذج الأول = الفرد سلبي (يُستدخل فيه) / النموذج الثاني = الفرد فعال طوعي (conformity). الفرق في موقف الفرد نفسه</div>
+      <span class="trap-fix">✅ سلبي = استدخال / فعال = انقياد طوعي</span>
+    </div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-icon">👶</div>
+    <div>
+      <div class="trap-title">الخلط في أرقام مراحل Piaget</div>
+      <div class="trap-desc">الطلاب يخلطون بين سن انتهاء مرحلة ما قبل العمليات (7 سنوات) وسن انتهاء العمليات المحسوبة (11-12 سنة). ومرحلة الدراسة هي ما قبل العمليات (2-7)</div>
+      <span class="trap-fix">✅ 0-2 حسحركية / 2-7 قبل عمليات / 7-11 محسوبة / 11+ شكلية</span>
+    </div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-icon">🏛️</div>
+    <div>
+      <div class="trap-title">ترتيب مؤسسات التنشئة</div>
+      <div class="trap-desc">كثير من الطلاب يضعون المدرسة أو الروضة أولاً، لكن الصحيح: الأسرة هي الأسبق والأهم دائماً مهما كان تكوينها</div>
+      <span class="trap-fix">✅ الترتيب: الأسرة → جماعة اللعب → المؤسسات التعليمية → وسائل الإعلام</span>
+    </div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-icon">🔁</div>
+    <div>
+      <div class="trap-title">الاعتقاد أن التنشئة تنتهي في الطفولة</div>
+      <div class="trap-desc">خاصية الاستمرار تعني أن التنشئة لا تتوقف! تستمر حتى مرحلة الشيخوخة لأن الفرد ينتمي لجماعات جديدة في كل مرحلة (طالب → موظف → متقاعد)</div>
+      <span class="trap-fix">✅ التنشئة = مدى الحياة كاملة وليس فقط الطفولة</span>
+    </div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-icon">🧠</div>
+    <div>
+      <div class="trap-title">نسبة Bloom إلى غيره</div>
+      <div class="trap-desc">إحصائية 80% من النمو العقلي قبل سن 8 تنسب لـ Bloom وليس لبياجيه أو أي عالم آخر</div>
+      <span class="trap-fix">✅ Bloom = 80% نمو عقلي قبل سن 8</span>
+    </div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-icon">⚖️</div>
+    <div>
+      <div class="trap-title">الخلط بين الهو والأنا والأنا الأعلى</div>
+      <div class="trap-desc">الهو = غرائز لاشعورية (Id) / الأنا = الواقع والعقل (Ego) / الأنا الأعلى = الضمير والأخلاق (Super-Ego = أوامر الوالدين المستدخلة)</div>
+      <span class="trap-fix">✅ الأنا الأعلى = الضمير = أوامر الوالدين صارت داخلية</span>
+    </div>
+  </div>
+
+  <div class="trap-card">
+    <div class="trap-icon">💬</div>
+    <div>
+      <div class="trap-title">الكلام الداخلي عند الطفل (Vygotsky)</div>
+      <div class="trap-desc">كثير من الطلاب يظنون أن الطفل يتكلم مع نفسه بصوت عالٍ من البداية بغرض التواصل. في الحقيقة هو يتكلم لأغراض ذاتية (إثارة - تفكير - تنظيم) وفي سن 4 يبدأ الكلام الداخلي</div>
+      <span class="trap-fix">✅ كلام الطفل العالي = تفكير بصوت عالٍ / سن 4 = كلام داخلي</span>
+    </div>
+  </div>
+
+  <!-- Summary box -->
+  <div class="card purple" style="margin-top:1rem;">
+    <div class="card-title"><span class="card-emoji">📌</span> نقاط مضمونة في كل امتحان</div>
+    <ul class="bullet-list">
+      <li data-emoji="⭐">تعريف Parsons للتنشئة الاجتماعية</li>
+      <li data-emoji="⭐">خصائص التنشئة الاجتماعية الخمس</li>
+      <li data-emoji="⭐">الفرق بين الهو والأنا والأنا الأعلى</li>
+      <li data-emoji="⭐">مراحل بياجيه الأربعة والأعمار</li>
+      <li data-emoji="⭐">إحصائية Bloom (80% قبل سن 8)</li>
+      <li data-emoji="⭐">أن التنشئة تستمر حتى الشيخوخة (ليست حكراً على الطفولة)</li>
+      <li data-emoji="⭐">الأسرة هي الأسبق والأهم في التنشئة</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  🌈 صُنع بحب لمساعدتك في المذاكرة 💖 • التنشئة الاجتماعية للطفل — د. رضا مسعد الجمال
+</footer>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    const idx = ['summary','chars','theories','scientists','devstages','traps'].indexOf(id);
+    if (idx >= 0) document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleAccordion(header) {
+    const item = header.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.accordion-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
